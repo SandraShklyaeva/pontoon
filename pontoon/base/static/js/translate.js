@@ -1154,11 +1154,11 @@ var Pontoon = (function (my) {
                       entity.translation[pluralForm].string = self.doRender(translation);
                       entity.ui.find('.translation-string')
                         .html(self.doNotRender(translation));
+                      entity.dirty = true;
                       if (self.user.localizer) {
                         next.addClass('approved');
                         if (entity.body) {
                           self.postMessage("SAVE", entity.translation[0].string);
-                          self.postMessage("NAVIGATE", entity.id);
                         }
                       }
 
